@@ -7,12 +7,23 @@
 //
 
 import UIKit
+import HealthKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let healthStore = HKHealthStore()
+        let readSet = Set<HKObjectType>(arrayLiteral:
+            HKObjectType.workoutType()
+        )
+        let writeSet = Set<HKSampleType>(arrayLiteral:
+            HKSampleType.workoutType()
+        )
+        healthStore.requestAuthorization(toShare: writeSet, read: readSet) { (success, error) in
+            //
+        }
     }
 
 

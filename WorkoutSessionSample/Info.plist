@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Healthcare のデータを使用します。</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Healthcare のデータをアップデートします。</string>
 </dict>
 </plist>
