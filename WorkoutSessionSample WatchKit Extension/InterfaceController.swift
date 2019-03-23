@@ -81,6 +81,7 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
         
         if toState.rawValue == HKWorkoutSessionState.ended.rawValue {
             print(session.startDate.debugDescription)
+            // ended のステータスに didChanged されてから値が入る
             print(session.endDate?.debugDescription)
             print(session.workoutConfiguration.activityType.rawValue)
             print(session.state.rawValue)
