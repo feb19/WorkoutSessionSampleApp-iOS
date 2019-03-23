@@ -14,6 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WorkoutSessionSample_WatchKit_App" customModuleProvider="target">
                     <items>
+                        <label alignment="left" text="Label" id="HsC-92-T5z"/>
                         <timer alignment="left" id="5If-DR-qVB"/>
                         <button width="1" alignment="left" title="Start" id="nqK-52-iDB">
                             <connections>
@@ -32,6 +33,7 @@
                         </button>
                     </items>
                     <connections>
+                        <outlet property="stateLabel" destination="HsC-92-T5z" id="krH-yY-4pv"/>
                         <outlet property="timer" destination="5If-DR-qVB" id="JdH-Np-JmC"/>
                     </connections>
                 </controller>

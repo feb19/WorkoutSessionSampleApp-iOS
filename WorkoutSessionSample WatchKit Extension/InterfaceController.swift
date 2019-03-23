@@ -15,9 +15,11 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
     var healthStore = HKHealthStore()
     var session: HKWorkoutSession!
     @IBOutlet weak var timer: WKInterfaceTimer!
+    @IBOutlet weak var stateLabel: WKInterfaceLabel!
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
+        stateLabel.setText("")
         let readSet = Set<HKObjectType>(arrayLiteral:
             HKObjectType.workoutType()
         )
@@ -79,10 +81,11 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
                         date: Date) {
         print("change State: \(date): \(printState(fromState.rawValue)) -> \(printState(toState.rawValue))")
         
+        stateLabel.setText(printState(toState.rawValue))
         if toState.rawValue == HKWorkoutSessionState.ended.rawValue {
             print(session.startDate.debugDescription)
             // ended のステータスに didChanged されてから値が入る
-            print(session.endDate?.debugDescription)
+            print(session.endDate?.debugDescription ?? "eneded data")
             print(session.workoutConfiguration.activityType.rawValue)
             print(session.state.rawValue)
             

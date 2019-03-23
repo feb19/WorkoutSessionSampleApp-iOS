@@ -86,6 +86,7 @@
 		4682E41322461DFA00F191E2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS5.1.sdk/System/Library/Frameworks/HealthKit.framework; sourceTree = DEVELOPER_DIR; };
 		4682E41522461E0200F191E2 /* WorkoutSessionSample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WorkoutSessionSample.entitlements; sourceTree = "<group>"; };
 		4682E41622461E0200F191E2 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		4682E41822463E2200F191E2 /* WorkoutSessionSample WatchKit App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "WorkoutSessionSample WatchKit App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +147,7 @@
 		4682E3ED22461B1500F191E2 /* WorkoutSessionSample WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
+				4682E41822463E2200F191E2 /* WorkoutSessionSample WatchKit App.entitlements */,
 				4682E3EE22461B1500F191E2 /* Interface.storyboard */,
 				4682E3F122461B1600F191E2 /* Assets.xcassets */,
 				4682E3F322461B1600F191E2 /* Info.plist */,
@@ -250,6 +252,11 @@
 					};
 					4682E3E822461B1500F191E2 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					4682E3F722461B1600F191E2 = {
 						CreatedOnToolsVersion = 10.1;
@@ -540,7 +547,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WorkoutSessionSample WatchKit App/WorkoutSessionSample WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LPN23T94U7;
 				IBSC_MODULE = WorkoutSessionSample_WatchKit_Extension;
 				INFOPLIST_FILE = "WorkoutSessionSample WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.feb19.WorkoutSessionSample.watchkitapp;
@@ -558,7 +567,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WorkoutSessionSample WatchKit App/WorkoutSessionSample WatchKit App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LPN23T94U7;
 				IBSC_MODULE = WorkoutSessionSample_WatchKit_Extension;
 				INFOPLIST_FILE = "WorkoutSessionSample WatchKit App/Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.feb19.WorkoutSessionSample.watchkitapp;
