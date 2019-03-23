@@ -86,9 +86,18 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
             print(session.startDate.debugDescription)
             // ended のステータスに didChanged されてから値が入る
             print(session.endDate?.debugDescription ?? "eneded data")
-            print(session.workoutConfiguration.activityType.rawValue)
+            let activityType = session.workoutConfiguration.activityType
+            print(activityType.rawValue)
             print(session.state.rawValue)
             
+            let workout = HKWorkout(activityType: activityType,
+                                    start: session.startDate ?? Date(),
+                                    end: session.endDate ?? Date())
+            
+            healthStore.save(workout,
+                             withCompletion: {(success,error)in
+                print("save? \(success)")
+            })
         }
         
     }
