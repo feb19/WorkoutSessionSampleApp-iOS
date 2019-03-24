@@ -16,10 +16,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         let healthStore = HKHealthStore()
         let readSet = Set<HKObjectType>(arrayLiteral:
-            HKObjectType.workoutType()
+            HKObjectType.workoutType(),
+            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+            HKObjectType.quantityType(forIdentifier: .heartRate)!
         )
         let writeSet = Set<HKSampleType>(arrayLiteral:
-            HKSampleType.workoutType()
+            HKObjectType.workoutType(),
+            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+            HKObjectType.quantityType(forIdentifier: .heartRate)!
         )
         healthStore.requestAuthorization(toShare: writeSet, read: readSet) { (success, error) in
             //
