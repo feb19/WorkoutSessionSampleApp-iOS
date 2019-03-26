@@ -37,7 +37,6 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
             HKObjectType.quantityType(forIdentifier: .heartRate)!
         )
         healthStore.requestAuthorization(toShare: writeSet, read: readSet) { (success, error) in
-            //
         }
         activeEnergy = HKQuantity(unit: HKUnit.smallCalorie(), doubleValue: 0.0)
         heartRate = HKQuantity(unit: HKUnit(from: "count/min"), doubleValue: 0.0)
@@ -152,13 +151,12 @@ class InterfaceController: WKInterfaceController, HKWorkoutSessionDelegate {
             // ended のステータスに didChanged されてから値が入る
             print(session.endDate?.debugDescription ?? "eneded data")
             let activityType = session.workoutConfiguration.activityType
-            print(activityType.rawValue)
-            print(session.state.rawValue)
-            
-            self.queries.removeAll()
             let duration = session.endDate?.timeIntervalSince(session.startDate ?? Date()) ?? 0
             let start = session.startDate ?? Date()
             let end = session.endDate ?? Date()
+            self.queries.removeAll()
+            print(activityType.rawValue)
+            print(session.state.rawValue)
             print(duration)
             print(start)
             print(end)
